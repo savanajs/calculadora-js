@@ -1,0 +1,73 @@
+Criar package json
+-----------------------------------
+npm init -y
+
+Integrando o jasmine
+----------------------------------
+npm install --save-dev jasmine
+
+Criar o spec
+----------------------------------
+jasmine init
+
+Integrando o Karma
+---------------------------------
+npm install --save-dev karma
+npm install --save-dev karma-jasmine
+npm install --save-dev karma-firefox-launcher
+karma init karma.conf.js
+
+E responda
+--------------------------------
+4.1 jasmine
+4.2 no
+4.3 Firefox
+4.4 spec/**/Spec.js
+4.5 Digite ENTER
+4.6 yes
+
+Broserfy com karma
+--------------------------------
+npm install --save-dev browserify
+npm install --save-dev watchify
+npm install --save-dev karma-browserify
+
+Edite o arquivo "karma.conf.js";
+-------------------------------------
+
+frameworks:['jasmine','browserify']
+helpers: 'spec/helpers/**/SpecHelper.js'
+preprocessors: 'spec/**/*Spec.js':['browserify']
+
+Edite o arquivo 'package.json';
+------------------------------------
+
+"scripts": {
+
+"test-jasmine": "jasmine",
+    
+"test-dev":"karma start",
+    
+"test":"karma start --single-run"
+  
+},
+
+Executar
+------------------------------------
+npm run test
+
+Arquivo de config do Travis
+-----------------------------------
+na raiz .travis.yml
+
+E insira o codigo
+
+language: node_js
+script: karma start ./karma.conf.js --single-run
+before_install:
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+node_js:
+  - 'node'
+
