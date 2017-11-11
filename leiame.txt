@@ -79,9 +79,16 @@ travis-ci.org
 -Procure o projeto "calculadora-js"
 -Ative o projeto
 
-Edite o Redme e insera a marcaçã odo Travis
+Edite o Redme e insera a marcaï¿½ï¿½ odo Travis
 
 Instalar Bootstrap
 ---------------------------------
+npm install --save-dev bootstrap@3
+
+Rodar
+---------------------------------
+npm run test-jasmine]
+npm run test-dev
+npm test
 
 
