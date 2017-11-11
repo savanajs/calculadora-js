@@ -71,3 +71,17 @@ before_install:
 node_js:
   - 'node'
 
+
+Associar travis
+---------------------------------
+travis-ci.org
+-Clique no btn + (Ao lado de My repositories)
+-Procure o projeto "calculadora-js"
+-Ative o projeto
+
+Edite o Redme e insera a marcaçã odo Travis
+
+Instalar Bootstrap
+---------------------------------
+
+
